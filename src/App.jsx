@@ -10,23 +10,6 @@ function App() {
   const calculateBMI = (e) => {
     e.preventDefault();
 
-    // if(weight > 0 && height > 0) {
-    //   const res = (weight / Math.floor((height * height) / 10000)).toFixed(2);
-    //   if(res === 'NaN') setBmiValue('height or weight value cannot be 0');
-    //   else setBmiValue(res);
-
-    //   // message logic
-    //   if (bmiValue > 0 && bmiValue < 25) {
-    //     setMessage('You are UnderWeight');
-    //   } else if (bmiValue >= 25 && bmiValue < 30) {
-    //     setMessage('You are Healthy Weight');
-    //   } else {
-    //     setMessage('You are OverWeight');
-    //   }
-    // }else {
-    //   alert('Please fill all the details properly');
-    // }
-
     if (!weight || !height) {
       alert('Please fill valid information');
     } else {
@@ -34,7 +17,7 @@ function App() {
       // case: if denomarator is 0 so we can't divide
       if (Math.floor((height * height) / 10000) === 0) {
         setBmiValue('BMI is Undefined');
-        setMessage('BMI is Undefined');
+        setMessage('We can\'t determine your Healthiness');
       } else {
         const res = (weight / ((height * height) / 10000)).toFixed(2);
         setBmiValue(res);
