@@ -11,7 +11,13 @@ function App() {
     e.preventDefault();
 
     if(weight && height) {
-      const res = (weight === 0 || height === 0) ? 0 : (weight / Math.floor((height * height) / 10000)).toFixed(2);
+      const res = (weight === 0 || height === 0) ? undefined : (weight / Math.floor((height * height) / 10000)).toFixed(2);
+      
+      if(res === undefined) {
+        setBmiValue('Height or Weight cannot be Zero');
+      }
+
+      setBmiValue(res);
       (res === 0 ? setBmiValue('height or weight cannot be zero') : setBmiValue(res));
 
       // message logic
@@ -23,7 +29,7 @@ function App() {
         setMessage('You are OverWeight');
       }
     }else {
-      alert('Please fill all the details');
+      alert('Please fill all the details properly');
     }
   }
 
