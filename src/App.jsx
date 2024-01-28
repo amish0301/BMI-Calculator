@@ -10,7 +10,7 @@ function App() {
   const calculateBMI = (e) => {
     e.preventDefault();
 
-    if(weight && height) {
+    if(weight > 0 && height > 0) {
       const res = (weight / Math.floor((height * height) / 10000)).toFixed(2);
       if(res === 'NaN') setBmiValue('height or weight value cannot be 0');
       else setBmiValue(res);
