@@ -42,16 +42,16 @@ function App() {
       // messages logic
       const bmi = parseInt(bmiValue);
       if(bmiValue.includes('BMI is Undefined', 0)) setMessage('BMI is Undefined'); 
-      if (bmi > 0 && bmi < 25) setMessage('You are Under-weight');
+      else if (bmi > 0 && bmi < 25) setMessage('You are Under-weight');
       else if (bmi >= 25 && bmi < 30) setMessage('You are Healthy weight')
       else setMessage('You are Overweight')
     }
   }
 
   const reload = () => {
-    setHeight()
-    setWeight();
-    setBmiValue('');
+    // setHeight()
+    // setWeight();
+    // setBmiValue('');
     window.location.reload();
   }
 
