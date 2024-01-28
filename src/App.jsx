@@ -47,36 +47,37 @@ function App() {
         }
       }
     }
+  };
 
-    const reload = () => {
-      window.location.reload();
-    }
-
-    return (
-      <div className='app'>
-        <div className="container">
-          <h2>BMI Calculator</h2>
-          <form onSubmit={calculateBMI}>
-            <div>
-              <label>Weight (in KG)</label>
-              <input type="number" placeholder='Enter Weight Value' value={weight} onChange={(e) => setWeight(e.target.value)} />
-            </div>
-            <div>
-              <label>Height (in cm) </label>
-              <input type="number" placeholder='Enter Height Value' value={height} onChange={(e) => setHeight(e.target.value)} />
-            </div>
-            <div>
-              <button className='btn' type='submit'>Submit</button>
-              <button className='btn btn-outline' type='submit' onClick={reload}>Reload</button>
-            </div>
-            <div className="msgBox">
-              <h3>Your BMI : {bmiValue}</h3>
-              <p>{message}</p>
-            </div>
-          </form>
-        </div>
-      </div>
-    )
+  const reload = () => {
+    window.location.reload();
   }
 
-  export default App
+  return (
+    <div className='app'>
+      <div className="container">
+        <h2>BMI Calculator</h2>
+        <form onSubmit={calculateBMI}>
+          <div>
+            <label>Weight (in KG)</label>
+            <input type="number" placeholder='Enter Weight Value' value={weight} onChange={(e) => setWeight(e.target.value)} />
+          </div>
+          <div>
+            <label>Height (in cm) </label>
+            <input type="number" placeholder='Enter Height Value' value={height} onChange={(e) => setHeight(e.target.value)} />
+          </div>
+          <div>
+            <button className='btn' type='submit'>Submit</button>
+            <button className='btn btn-outline' type='submit' onClick={reload}>Reload</button>
+          </div>
+          <div className="msgBox">
+            <h3>Your BMI : {bmiValue}</h3>
+            <p>{message}</p>
+          </div>
+        </form>
+      </div>
+    </div>
+  )
+};
+
+export default App
