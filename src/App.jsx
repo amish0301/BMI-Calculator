@@ -27,7 +27,7 @@ function App() {
     //   alert('Please fill all the details properly');
     // }
 
-    if (weight === 0 || height === 0) {
+    if (weight === 0 || height === 0 || !weight || !height) {
       alert('Please fill valid information');
     } else {
 
@@ -41,7 +41,8 @@ function App() {
 
       // messages logic
       const bmi = parseInt(bmiValue);
-      if (bmi < 25) setMessage('You are Under-weight');
+      if(bmiValue.includes('BMI is Undefined', 0)) setMessage('BMI is Undefined'); 
+      if (bmi > 0 && bmi < 25) setMessage('You are Under-weight');
       else if (bmi >= 25 && bmi < 30) setMessage('You are Healthy weight')
       else setMessage('You are Overweight')
     }
