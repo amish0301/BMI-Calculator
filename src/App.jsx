@@ -2,15 +2,15 @@ import React, { useState } from 'react'
 import './App.css'
 
 function App() {
-  const [weight, setWeight] = useState(0);
-  const [height, setHeight] = useState(0);
+  const [weight, setWeight] = useState();
+  const [height, setHeight] = useState();
   const [bmiValue, setBmiValue] = useState('');
   const [message, setMessage] = useState('');
 
   const calculateBMI = (e) => {
     e.preventDefault();
 
-    if(weight > 0 && height > 0) {
+    if(weight && height) {
       const res = (weight / Math.floor((height * height) / 10000)).toFixed(2);
       setBmiValue(res);
 
@@ -23,10 +23,7 @@ function App() {
         setMessage('You are OverWeight');
       }
     }else {
-      if(weight === null || height === null) {
-        alert('Please Fill all the details');
-      }
-      // alert('height or weight cannot be 0');
+      alert('Please fill all the details');
     }
   }
 
