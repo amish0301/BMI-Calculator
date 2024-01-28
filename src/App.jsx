@@ -11,14 +11,9 @@ function App() {
     e.preventDefault();
 
     if(weight && height) {
-      const res = (weight === 0 || height === 0) ? undefined : (weight / Math.floor((height * height) / 10000)).toFixed(2);
-      
-      if(res === undefined) {
-        setBmiValue('Height or Weight cannot be Zero');
-      }
-
-      setBmiValue(res);
-      (res === 0 ? setBmiValue('height or weight cannot be zero') : setBmiValue(res));
+      const res = (weight / Math.floor((height * height) / 10000)).toFixed(2);
+      if(res === 'NaN') setBmiValue('height or weight value cannot be 0');
+      else setBmiValue(res);
 
       // message logic
       if (bmiValue > 0 && bmiValue < 25) {
