@@ -11,11 +11,11 @@ function App() {
     e.preventDefault();
 
     if(weight && height) {
-      const res = (weight / Math.floor((height * height) / 10000)).toFixed(2);
-      setBmiValue(res);
+      const res = (weight === 0 || height === 0) ? 0 : (weight / Math.floor((height * height) / 10000)).toFixed(2);
+      (res === 0 ? setBmiValue('height or weight cannot be zero') : setBmiValue(res));
 
       // message logic
-      if (bmiValue < 25) {
+      if (bmiValue > 0 && bmiValue < 25) {
         setMessage('You are UnderWeight');
       } else if (bmiValue >= 25 && bmiValue < 30) {
         setMessage('You are Healthy Weight');
