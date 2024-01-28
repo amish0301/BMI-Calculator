@@ -27,7 +27,7 @@ function App() {
     //   alert('Please fill all the details properly');
     // }
 
-    if (weight === 0 || height === 0 || !weight || !height) {
+    if (!weight || !height) {
       alert('Please fill valid information');
     } else {
 
@@ -41,17 +41,15 @@ function App() {
 
       // messages logic
       const bmi = parseInt(bmiValue);
-      if(bmiValue.includes('BMI is Undefined', 0)) setMessage('BMI is Undefined'); 
-      else if (bmi > 0 && bmi < 25) setMessage('You are Under-weight');
+      if (bmi > 0 && bmi < 25) setMessage('You are Under weight');
       else if (bmi >= 25 && bmi < 30) setMessage('You are Healthy weight')
-      else setMessage('You are Overweight')
+      else {
+        if(bmiValue !== 'BMI is Undefined') setMessage('You are OverWeight')
+      }
     }
   }
 
   const reload = () => {
-    // setHeight()
-    // setWeight();
-    // setBmiValue('');
     window.location.reload();
   }
 
