@@ -24,8 +24,9 @@ function App() {
       }
     }else {
       if(weight === null || height === null) {
-        throw new alert('Please Fill all the details');
+        alert('Please Fill all the details');
       }
+      // alert('height or weight cannot be 0');
     }
   }
 
