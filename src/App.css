@@ -17,11 +17,20 @@
   box-shadow: 0px 0px 12px #ccc;
   border-radius: 8px;
   padding: 3rem;
+  transition: 0.6s all ease-in-out;
+
+  label {
+    font-weight: 600;
+  }
+}
+
+.container:hover {
+  transform: scale(1.02, 1.02);
 }
 
 input {
   width: 100%;
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   padding: 15px 4px;
   margin: 8px 0;
   border-radius: 8px;
@@ -40,9 +49,14 @@ input {
   cursor: pointer;
 }
 
+.btn:hover {
+  transform: scale(1.0191, 1.0191);
+  transition: 0.3s ease-out;
+}
+
 .btn-outline {
   background-color: #fff;
-  color: #a6bcda;
+  color: #091930;
 }
 
 .msgBox {
@@ -54,10 +68,11 @@ p {
   margin: 10px 0;
 }
 
-.img-container {
+.container h2 {
   text-align: center;
+  padding-bottom: 15px;
 }
 
-.img-container img {
+/* .img-container img {
   height: 200px;
-}
+} */
