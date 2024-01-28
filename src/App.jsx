@@ -10,9 +10,7 @@ function App() {
   const calculateBMI = (e) => {
     e.preventDefault();
 
-    if (weight === 0 || height === 0) {
-      alert('Please Enter a valid Weight or Height');
-    } else {
+    if(weight > 0 && height > 0) {
       const res = (weight / Math.floor((height * height) / 10000)).toFixed(2);
       setBmiValue(res);
 
@@ -23,6 +21,10 @@ function App() {
         setMessage('You are Healthy Weight');
       } else {
         setMessage('You are OverWeight');
+      }
+    }else {
+      if(weight === null || height === null) {
+        throw new alert('Please Fill all the details');
       }
     }
   }
