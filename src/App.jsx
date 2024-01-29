@@ -23,7 +23,7 @@ function App() {
         setBmiValue(res);
 
         const bmi = parseInt(bmiValue);
-        if (bmi > 0 && bmi < 25) setMessage('You are Under weight');
+        if (bmi < 25) setMessage('You are Under weight');
         else if (bmi >= 25 && bmi < 30) setMessage('You are Healthy weight')
         else {
           if (!message.length) setMessage('You are Over weight');
