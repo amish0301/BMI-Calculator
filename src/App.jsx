@@ -17,13 +17,13 @@ function App() {
       // case: if denomarator is 0 so we can't divide
       if (Math.floor((height * height) / 10000) === 0) {
         setBmiValue('BMI is Undefined');
-        setMessage('We can\'t determine your Healthiness');
+        setMessage('Sorry, We can\'t determine your Healthiness');
       } else {
         const res = (weight / ((height * height) / 10000)).toFixed(2);
         setBmiValue(res);
 
-        const bmi = parseFloat(bmiValue);
-        if (bmi >= 0 && bmi < 25) setMessage('You are Under weight');
+        const bmi = Math.floor(parseFloat(res));
+        if (bmi < 25) setMessage('You are Under weight');
         else if (bmi >= 25 && bmi < 30) setMessage('You are Healthy weight')
         else {
           if (!message.length) setMessage('You are Over weight');
